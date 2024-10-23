@@ -8,6 +8,11 @@ const userrouter=require('./Routes/Routes')
 app.use(express.json())
 app.use('/api/user',userrouter)
 
+app.use('/',(req,res)=>{
+    res.json('same server connected')
+})
+
+
 
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
